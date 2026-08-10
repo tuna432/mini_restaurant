@@ -1,0 +1,54 @@
+package ui;
+
+import model.RestaurantTable;
+import model.TableStatus;
+import service.RestaurantManager;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class TablePanel extends JPanel {
+    private MainFrame mainFrame;
+    private RestaurantManager manager;
+    private JPanel tablesPanel;
+
+    public TablePanel(MainFrame mainFrame, RestaurantManager manager) {
+        this.mainFrame = mainFrame;
+        this.manager = manager;
+
+        setLayout(new BorderLayout(10, 10));
+        setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        JLabel title = new JLabel("MINI RESTAURANT MANAGER", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 24));
+        add(title, BorderLayout.NORTH);
+
+        tablesPanel = new JPanel(new GridLayout(3, 2, 15, 15));
+        add(tablesPanel, BorderLayout.CENTER);
+
+        refresh();
+    }
+
+    public void refresh() {
+        tablesPanel.removeAll();
+
+        for (RestaurantTable table : manager.getTables()) {
+            String status = table.getStatus() == TableStatus.EMPTY
+                    ? "BOŞ"
+                    : "DOLU";
+
+            JButton button = new JButton(
+                    "Masa " + table.getTableNumber() + " - " + status
+            );
+
+            button.setFont(new Font("Arial", Font.BOLD, 18));
+
+            button.addActionListener(e -> mainFrame.showOrder(table));
+
+            tablesPanel.add(button);
+        }
+
+        tablesPanel.revalidate();
+        tablesPanel.repaint();
+    }
+}
