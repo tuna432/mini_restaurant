@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
         tablePanel = new TablePanel(this, manager);
         orderPanel = new OrderPanel(this, manager);
 
-        mainPanel.add(tablePanel, "tables");
+        mainPanel.add(tablePanel, "masalar");
         mainPanel.add(orderPanel, "order");
 
         add(mainPanel);
@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
 
     public void showTables() {
         tablePanel.refresh();
-        cardLayout.show(mainPanel, "tables");
+        cardLayout.show(mainPanel, "masalar");
     }
 
     public void showOrder(RestaurantTable table) {
