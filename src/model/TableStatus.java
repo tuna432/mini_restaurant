@@ -1,3 +1,4 @@
+//model paketi baglantı cümlesi.
 package model;
 
 //masanının durumunu kontrol eder

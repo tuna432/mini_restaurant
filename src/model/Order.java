@@ -1,5 +1,7 @@
+//paket baglantı cümlesi.
 package model;
 
+//kütüphaneler
 import java.util.ArrayList;
 
 // yeni liste açılır

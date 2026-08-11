@@ -7,7 +7,8 @@ import model.RestaurantTable;
 import java.util.ArrayList;
 
 public class RestaurantManager {
-  //2 tane özel liste açılır 1.si sadece productsları listeier 2. sadece tablesları listeler
+
+    //2 tane özel liste açılır 1.si sadece productsları listeier 2. sadece tablesları listeler
     private ArrayList<Product> products;
     private ArrayList<RestaurantTable> tables;
 
@@ -45,6 +46,7 @@ public class RestaurantManager {
     public ArrayList<RestaurantTable> getTables() {
         return tables;
     }
+
     //masa numarasını arar eger eşitse masa bilgilerini yollar
     public RestaurantTable findTable(int tableNumber) {
         for (RestaurantTable table : tables) {

@@ -1,10 +1,12 @@
+//model paketinin baglantısı.
 package model;
 
-
+//ürünler ve miktarın tanımlandıgı sınıftır.
 public class OrderItem {
     private Product product;
     private int quantity;
 
+    //listeye ürün miktarının elşenmesini saglayan method.
     public OrderItem(Product product) {
         this.product = product;
         this.quantity = 1;

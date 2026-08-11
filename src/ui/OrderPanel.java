@@ -45,6 +45,7 @@ public class OrderPanel extends JPanel {
 
         orderListModel = new DefaultListModel<>();
         orderList = new JList<>(orderListModel);
+        orderList.setFont(new Font("Arial", Font.PLAIN, 18));
 
         orderContainer.add(new JScrollPane(orderList), BorderLayout.CENTER);
 

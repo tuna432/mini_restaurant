@@ -1,3 +1,4 @@
+//model baglantı cümlesi.
 package model;
 
 //RestaurantTableın classıdır

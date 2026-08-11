@@ -22,6 +22,7 @@ public class Product {
     public String getName() {
         return name;
     }
+
     // ürün fiyatını küsüratlı olarak alan ve geri döndüren metod
     public double getPrice() {
         return price;
