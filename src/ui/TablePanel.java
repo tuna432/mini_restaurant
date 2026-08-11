@@ -41,6 +41,16 @@ public class TablePanel extends JPanel {
                     "Masa " + table.getTableNumber() + " - " + status
             );
 
+            if (table.getStatus() == TableStatus.EMPTY) {
+                button.setBackground(new Color(47, 249, 36));
+                button.setForeground(Color.WHITE);
+            }
+
+            if (table.getStatus() == TableStatus.OCCUPIED) {
+                button.setBackground(new Color(150, 0, 0));
+                button.setForeground(Color.WHITE);
+            }
+
             button.setFont(new Font("Arial", Font.BOLD, 18));
 
             button.addActionListener(e -> mainFrame.showOrder(table));

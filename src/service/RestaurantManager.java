@@ -26,9 +26,14 @@ public class RestaurantManager {
         products.add(new Product(1, "Hamburger", 180));
         products.add(new Product(2, "Pizza", 220));
         products.add(new Product(3, "Makarna", 160));
-        products.add(new Product(4, "Kola", 50));
-        products.add(new Product(5, "Ayran", 35));
-        products.add(new Product(6, "Cheesecake", 120));
+        products.add(new Product(4, "Cheesecake", 120));
+
+
+        products.add(new Product(6, "Kola", 50));
+        products.add(new Product(7, "Ayran", 35));
+        products.add(new Product(8, "su", 20));
+        products.add(new Product(9, "gazoz", 20));
+        products.add(new Product(10, "", 120));
     }
 
     //elle eklenen masalar
