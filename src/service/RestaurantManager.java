@@ -1,3 +1,5 @@
+//40. ile 50. satır arasında masa kodu var prdan ekleme veya çıkarma 8yapılabilir.
+
 //kulanılan kütüphaneler
 package service;
 
@@ -33,10 +35,12 @@ public class RestaurantManager {
         products.add(new Product(7, "Ayran", 35));
         products.add(new Product(8, "su", 20));
         products.add(new Product(9, "gazoz", 20));
-        products.add(new Product(10, "", 120));
+
+        products.add(new Product(10, "Baklava", 250));
+        products.add(new Product(11, "Sütlaç", 200));
     }
 
-    //elle eklenen masalar
+    //elle eklenen masalar yani buradan masa sayısını artırabilirsiniz
     private void createTables() {
         for (int i = 1; i <= 6; i++) {
             tables.add(new RestaurantTable(i));
@@ -52,7 +56,7 @@ public class RestaurantManager {
         return tables;
     }
 
-    //masa numarasını arar eger eşitse masa bilgilerini yollar
+    //masa numarasını arar eger aynı numaralar ise masa bilgilerini yollar
     public RestaurantTable findTable(int tableNumber) {
         for (RestaurantTable table : tables) {
             if (table.getTableNumber() == tableNumber) {

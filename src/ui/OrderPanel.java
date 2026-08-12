@@ -438,6 +438,9 @@ public class OrderPanel extends JPanel {
                                 "Arial",
                                 Font.BOLD,
                                 20
+
+
+
                         )
                 );
 
@@ -451,6 +454,77 @@ public class OrderPanel extends JPanel {
                         )
                 );
             }
+
+
+            if (product.getName()
+                    .equals("Hamburger")) {
+
+                menuPanel.add(
+                        Box.createVerticalStrut(
+                                20
+                        )
+                );
+
+                JLabel YiyeceklerLabel =
+                        new JLabel(
+                                "Yiyecekler"
+                        );
+
+                YiyeceklerLabel.setFont(
+                        new Font(
+                                "Arial",
+                                Font.BOLD,
+                                20
+
+
+
+                        )
+                );
+
+                menuPanel.add(
+                        YiyeceklerLabel
+                );
+
+
+            }
+
+
+
+            if (product.getName()
+                    .equals("Baklava")) {
+
+                menuPanel.add(
+                        Box.createVerticalStrut(
+                                20
+                        )
+                );
+
+                JLabel TatlılarLabel =
+                        new JLabel(
+                                "Tatlılar"
+                        );
+
+                TatlılarLabel.setFont(
+                        new Font(
+                                "Arial",
+                                Font.BOLD,
+                                20
+
+
+
+                        )
+                );
+
+                menuPanel.add(
+                        TatlılarLabel
+                );
+
+
+
+
+            }
+
+
 
             JButton button =
                     new JButton(
@@ -654,23 +728,130 @@ public class OrderPanel extends JPanel {
 
     private void closeOrder() {
 
-        int result =
-                JOptionPane.showConfirmDialog(
-                        this,
-                        "Hesabı kapatmak istediğinize emin misiniz?",
-                        "Hesabı Kapat",
-                        JOptionPane.YES_NO_OPTION
+        StringBuilder summary = new StringBuilder();
+
+        summary.append("HESAP\n");
+        summary.append("--------------------------------\n");
+
+        for (OrderItem item : currentTable.getOrder().getItems()) {
+
+            Product product = item.getProduct();
+
+            summary.append(
+                    product.getName()
+                            + " x"
+                            + item.getQuantity()
+                            + " "
+                            + formatPrice(item.getSubtotal())
+                            + " TL\n"
+            );
+        }
+
+        summary.append("--------------------------------\n");
+
+        summary.append(
+                "TOPLAM: "
+                        + formatPrice(
+                        currentTable
+                                .getOrder()
+                                .calculateTotal()
+                )
+                        + " TL"
+        );
+
+        JTextArea summaryArea = new JTextArea(
+                summary.toString()
+        );
+
+        summaryArea.setFont(
+                new Font(
+                        "Arial",
+                        Font.PLAIN,
+                        16
+                )
+        );
+
+        summaryArea.setEditable(false);
+        summaryArea.setOpaque(false);
+
+        JButton cancelButton =
+                new JButton("Vazgeç");
+
+        JButton payButton =
+                new JButton("ÖDE");
+
+        cancelButton.setFont(
+                new Font(
+                        "Arial",
+                        Font.PLAIN,
+                        16
+                )
+        );
+
+        payButton.setFont(
+                new Font(
+                        "Arial",
+                        Font.BOLD,
+                        16
+                )
+        );
+
+        JPanel buttonPanel =
+                new JPanel(
+                        new FlowLayout(
+                                FlowLayout.RIGHT
+                        )
                 );
 
-        if (result ==
-                JOptionPane.YES_OPTION) {
+        buttonPanel.add(cancelButton);
+        buttonPanel.add(payButton);
 
-            manager.closeOrder(
-                    currentTable
-            );
+        JDialog dialog =
+                new JDialog(
+                        (Frame) SwingUtilities
+                                .getWindowAncestor(this),
+                        "Hesabı Kapat",
+                        true
+                );
 
-            mainFrame.showTables();
-        }
+        dialog.setLayout(
+                new BorderLayout(
+                        10,
+                        10
+                )
+        );
+
+        dialog.add(
+                summaryArea,
+                BorderLayout.CENTER
+        );
+
+        dialog.add(
+                buttonPanel,
+                BorderLayout.SOUTH
+        );
+
+        dialog.setSize(400, 350);
+        dialog.setLocationRelativeTo(this);
+
+        cancelButton.addActionListener(
+                e -> dialog.dispose()
+        );
+
+        payButton.addActionListener(
+                e -> {
+
+                    manager.closeOrder(
+                            currentTable
+                    );
+
+                    dialog.dispose();
+
+                    mainFrame.showTables();
+                }
+        );
+
+        dialog.setVisible(true);
     }
 
     // =============================================================
