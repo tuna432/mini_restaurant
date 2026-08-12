@@ -7,7 +7,7 @@ public class RestaurantTable {
     private TableStatus status;
     private Order order;
 
-    //RestaurantTable classındır
+    //RestaurantTable classındır.
     public RestaurantTable(int tableNumber) {
         this.tableNumber = tableNumber;
         this.status = TableStatus.EMPTY;

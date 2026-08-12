@@ -41,7 +41,7 @@ public class TablePanel extends JPanel {
                     "Masa " + table.getTableNumber() + " - " + status
             );
 
-            if (table.getStatus() == TableStatus.EMPTY) {
+             if (table.getStatus() == TableStatus.EMPTY) {
                 button.setBackground(new Color(47, 249, 36));
                 button.setForeground(Color.WHITE);
             }

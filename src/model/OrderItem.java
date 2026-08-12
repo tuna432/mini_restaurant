@@ -22,7 +22,7 @@ public class OrderItem {
         return quantity;
     }
 
-    //miktar artırma yapılabilir
+    //miktar artırma yapılabilir.
     public void increaseQuantity() {
         quantity++;
     }

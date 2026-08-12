@@ -13,7 +13,7 @@ public class Product {
         this.price = price;
     }
 
-    // ürüne özel olan id yi alan ve geri döndüren metod
+    // ürüne özel olan id yi alan ve geri döndüren metod.
     public int getId() {
         return id;
     }

@@ -4,7 +4,7 @@ package model;
 //kütüphaneler
 import java.util.ArrayList;
 
-// yeni liste açılır
+// yeni liste açılır.
 public class Order {
     private ArrayList<OrderItem> items;
 
