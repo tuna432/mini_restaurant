@@ -60,6 +60,13 @@ public class Order {
         items.clear();
     }
 
+    // indeks ile ürünü tamamen silme
+    public void removeItemAt(int index) {
+        if (index >= 0 && index < items.size()) {
+            items.remove(index);
+        }
+    }
+
     //boş mu kontrolü
     public boolean isEmpty() {
         return items.isEmpty();

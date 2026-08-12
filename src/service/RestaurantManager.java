@@ -1,6 +1,6 @@
-//40. ile 50. satır arasında masa kodu var prdan ekleme veya çıkarma 8yapılabilir.
+    //40. ile 50. satır arasında masa kodu var ordan ekleme veya çıkarma yapılabilir.
 
-//kulanılan kütüphaneler
+    //kulanılan kütüphaneler
 package service;
 
 import model.Product;
@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class RestaurantManager {
 
-    //2 tane özel liste açılır 1.si sadece productsları listeier 2. sadece tablesları listeler
+          //2 tane özel liste açılır 1.si sadece productsları listeier 2. sadece tablesları listeler
     private ArrayList<Product> products;
     private ArrayList<RestaurantTable> tables;
 
-     //RestaurantManager metodu listeleri tanımlar ve oluşturur
+        //RestaurantManager metodu listeleri tanımlar ve oluşturur
     public RestaurantManager() {
         products = new ArrayList<>();
         tables = new ArrayList<>();
@@ -23,7 +23,7 @@ public class RestaurantManager {
         createTables();
     }
 
-    //elle girilen veriler
+        //elle girilen veriler
     private void createProducts() {
         products.add(new Product(1, "Hamburger", 180));
         products.add(new Product(2, "Pizza", 220));
@@ -42,12 +42,12 @@ public class RestaurantManager {
 
     //elle eklenen masalar yani buradan masa sayısını artırabilirsiniz
     private void createTables() {
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <=    6; i++) {
             tables.add(new RestaurantTable(i));
         }
     }
 
-    //listeler
+        //listeler
     public ArrayList<Product> getProducts() {
         return products;
     }
@@ -56,7 +56,7 @@ public class RestaurantManager {
         return tables;
     }
 
-    //masa numarasını arar eger aynı numaralar ise masa bilgilerini yollar
+        //masa numarasını arar eger aynı numaralar ise masa bilgilerini yollar
     public RestaurantTable findTable(int tableNumber) {
         for (RestaurantTable table : tables) {
             if (table.getTableNumber() == tableNumber) {
@@ -66,7 +66,7 @@ public class RestaurantManager {
 
         return null;
     }
-//masayı kapatır
+    //masayı kapatır
     public void closeOrder(RestaurantTable table) {
         table.closeOrder();
     }

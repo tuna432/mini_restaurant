@@ -1,12 +1,12 @@
-//restaurant baglantı cümlesi
+    //restaurant baglantı cümlesi
 package restaurant;
 
-//kütüphaneler
+    //kütüphaneler
 import service.RestaurantManager;
 import ui.MainFrame;
 import javax.swing.SwingUtilities;
 
-//kodun başlangıcı.
+    //kodun başlangıcı.
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

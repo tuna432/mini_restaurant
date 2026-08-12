@@ -90,9 +90,19 @@ public class OrderPanel extends JPanel {
                         new BorderLayout()
                 );
 
+        JScrollPane menuScrollPane =
+                new JScrollPane(
+                        menuPanel,
+                        JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                        JScrollPane.HORIZONTAL_SCROLLBAR_NEVER
+                );
+
+        menuScrollPane.setBorder(null);
+        menuScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+
         menuContainer.add(
-                menuPanel,
-                BorderLayout.NORTH
+                menuScrollPane,
+                BorderLayout.CENTER
         );
 
         centerPanel.add(
@@ -682,8 +692,7 @@ public class OrderPanel extends JPanel {
 
             currentTable
                     .getOrder()
-                    .getItems()
-                    .remove(row);
+                    .removeItemAt(row);
         }
 
         currentTable.updateStatus();
@@ -712,8 +721,7 @@ public class OrderPanel extends JPanel {
 
         currentTable
                 .getOrder()
-                .getItems()
-                .remove(
+                .removeItemAt(
                         selectedRow
                 );
 
