@@ -9,7 +9,7 @@ public class OrderItem {
     //listeye ürün miktarının elşenmesini saglayan method.
     public OrderItem(Product product) {
         this.product = product;
-        this.quantity = 1;
+        this.quantity = 1   ;
     }
 
     // ürün çagırılır

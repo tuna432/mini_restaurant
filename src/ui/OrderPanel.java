@@ -449,8 +449,6 @@ public class OrderPanel extends JPanel {
                                 Font.BOLD,
                                 20
 
-
-
                         )
                 );
 
@@ -464,7 +462,6 @@ public class OrderPanel extends JPanel {
                         )
                 );
             }
-
 
             if (product.getName()
                     .equals("Hamburger")) {
@@ -486,8 +483,6 @@ public class OrderPanel extends JPanel {
                                 Font.BOLD,
                                 20
 
-
-
                         )
                 );
 
@@ -497,8 +492,6 @@ public class OrderPanel extends JPanel {
 
 
             }
-
-
 
             if (product.getName()
                     .equals("Baklava")) {
@@ -520,8 +513,6 @@ public class OrderPanel extends JPanel {
                                 Font.BOLD,
                                 20
 
-
-
                         )
                 );
 
@@ -529,12 +520,7 @@ public class OrderPanel extends JPanel {
                         TatlılarLabel
                 );
 
-
-
-
             }
-
-
 
             JButton button =
                     new JButton(
@@ -767,20 +753,54 @@ public class OrderPanel extends JPanel {
                         + " TL"
         );
 
-        JTextArea summaryArea = new JTextArea(
-                summary.toString()
-        );
+        JTextArea summaryArea =
+                new JTextArea(summary.toString());
 
         summaryArea.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        16
-                )
+                new Font("Arial", Font.PLAIN, 16)
         );
 
         summaryArea.setEditable(false);
         summaryArea.setOpaque(false);
+
+        // ÖDEME TÜRÜ
+        JLabel paymentLabel =
+                new JLabel("ÖDEME TÜRÜ");
+
+        paymentLabel.setFont(
+                new Font("Arial", Font.BOLD, 16)
+        );
+
+        JRadioButton cashButton =
+                new JRadioButton("Nakit");
+
+        JRadioButton cardButton =
+                new JRadioButton("Kredi Kartı");
+
+        cashButton.setFont(
+                new Font("Arial", Font.PLAIN, 15)
+        );
+
+        cardButton.setFont(
+                new Font("Arial", Font.PLAIN, 15)
+        );
+
+        ButtonGroup paymentGroup =
+                new ButtonGroup();
+
+        paymentGroup.add(cashButton);
+        paymentGroup.add(cardButton);
+
+        JPanel paymentPanel =
+                new JPanel(
+                        new FlowLayout(
+                                FlowLayout.LEFT
+                        )
+                );
+
+        paymentPanel.add(paymentLabel);
+        paymentPanel.add(cashButton);
+        paymentPanel.add(cardButton);
 
         JButton cancelButton =
                 new JButton("Vazgeç");
@@ -789,20 +809,17 @@ public class OrderPanel extends JPanel {
                 new JButton("ÖDE");
 
         cancelButton.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        16
-                )
+                new Font("Arial", Font.PLAIN, 16)
         );
 
         payButton.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        16
-                )
+                new Font("Arial", Font.BOLD, 16)
         );
+
+        JPanel bottomPanel =
+                new JPanel(
+                        new BorderLayout()
+                );
 
         JPanel buttonPanel =
                 new JPanel(
@@ -813,6 +830,16 @@ public class OrderPanel extends JPanel {
 
         buttonPanel.add(cancelButton);
         buttonPanel.add(payButton);
+
+        bottomPanel.add(
+                paymentPanel,
+                BorderLayout.NORTH
+        );
+
+        bottomPanel.add(
+                buttonPanel,
+                BorderLayout.SOUTH
+        );
 
         JDialog dialog =
                 new JDialog(
@@ -835,11 +862,15 @@ public class OrderPanel extends JPanel {
         );
 
         dialog.add(
-                buttonPanel,
+                bottomPanel,
                 BorderLayout.SOUTH
         );
 
-        dialog.setSize(400, 350);
+        dialog.setSize(
+                450,
+                400
+        );
+
         dialog.setLocationRelativeTo(this);
 
         cancelButton.addActionListener(
@@ -848,6 +879,40 @@ public class OrderPanel extends JPanel {
 
         payButton.addActionListener(
                 e -> {
+
+                    if (!cashButton.isSelected()
+                            && !cardButton.isSelected()) {
+
+                        JOptionPane.showMessageDialog(
+                                dialog,
+                                "Lütfen ödeme türünü seçin."
+                        );
+
+                        return;
+                    }
+
+                    String paymentType;
+
+                    if (cashButton.isSelected()) {
+                        paymentType = "Nakit";
+                    } else {
+                        paymentType = "Kredi Kartı";
+                    }
+
+                    JOptionPane.showMessageDialog(
+                            dialog,
+                            "Ödeme alındı.\n"
+                                    + "Ödeme Türü: "
+                                    + paymentType
+                                    + "\n"
+                                    + "Tutar: "
+                                    + formatPrice(
+                                    currentTable
+                                            .getOrder()
+                                            .calculateTotal()
+                            )
+                                    + " TL"
+                    );
 
                     manager.closeOrder(
                             currentTable

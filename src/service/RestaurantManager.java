@@ -1,4 +1,4 @@
-    //40. ile 50. satır arasında masa kodu var ordan ekleme veya çıkarma yapılabilir.
+    //40. ile 50. satır arasında masa kodu var prdan ekleme veya çıkarma 8yapılabilir.
 
     //kulanılan kütüphaneler
 package service;
@@ -42,7 +42,7 @@ public class RestaurantManager {
 
     //elle eklenen masalar yani buradan masa sayısını artırabilirsiniz
     private void createTables() {
-        for (int i = 1; i <=    6; i++) {
+        for (int i = 1; i <=  6; i++) {
             tables.add(new RestaurantTable(i));
         }
     }
@@ -66,7 +66,7 @@ public class RestaurantManager {
 
         return null;
     }
-    //masayı kapatır
+//masayı kapatır
     public void closeOrder(RestaurantTable table) {
         table.closeOrder();
     }
