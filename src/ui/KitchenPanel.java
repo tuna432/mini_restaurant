@@ -85,6 +85,7 @@ public class KitchenPanel extends JPanel {
                 if (name.equalsIgnoreCase("Kola")
                         || name.equalsIgnoreCase("Ayran")
                         || name.equalsIgnoreCase("Su")
+                        ||name.equalsIgnoreCase("meyve suyu")
                         || name.equalsIgnoreCase("Gazoz")) {
                     continue;
                 }

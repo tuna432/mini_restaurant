@@ -20,7 +20,7 @@ public class RestaurantManager {
         createTables();
     }
 
-    //
+    //son id 16, 17 kulanılacak yeni id eklenirse eger idi önceki ürün ile aynı olursa önce ürünü döndürür butonda sadece adı degişir.
     private void createProducts() {
 
         products.add(new Product(1,"Hamburger",180));
@@ -29,19 +29,25 @@ public class RestaurantManager {
         products.add(new Product(4,"Cheesecake",120));
         products.add(new Product(5,"kahvaltılık",500));
         products.add(new Product(12,"omlet",200));
+        products.add(new Product(15, "kebap" , 250));
 
         products.add(new Product(6,"Kola",50));
         products.add(new Product(7,"Ayran",35));
         products.add(new Product(8,"Su",20));
         products.add(new Product(9,"Gazoz",20));
+        products.add(new Product(16 ,"meyve suyu", 50));
 
         products.add(new Product(10,"Baklava",250));
         products.add(new Product(11,"Sütlaç",200));
+        products.add(new Product(13,"pasta",200));
+        products.add(new Product(14, "ekler pasta", 120));
+
     }
 
+    //bu methodan masa sayısını azaltıp artılılılabilir.
     private void createTables() {
 
-        for(int i=1;i<=6;i++){
+        for(int i=1;i<=12;i++){
 
             tables.add(new RestaurantTable(i));
 
@@ -57,6 +63,7 @@ public class RestaurantManager {
         return tables;
     }
 
+    //hesapı kapat tuşuna basıldıgında ürünleri temizler ve masayı boşa çıkartır.
     public void closeOrder(RestaurantTable table){
 
         table.closeOrder();
@@ -74,9 +81,11 @@ public class RestaurantManager {
 
                 String name=item.getProduct().getName();
 
+                //eger aşagda adı yazılı olanlar eklenirse içecek oldukları için aşcının ekranına düşmez.
                 if(name.equalsIgnoreCase("Kola")
                         ||name.equalsIgnoreCase("Ayran")
                         ||name.equalsIgnoreCase("Su")
+                        ||name.equalsIgnoreCase("meyve suyu")
                         ||name.equalsIgnoreCase("Gazoz")){
 
                     continue;
