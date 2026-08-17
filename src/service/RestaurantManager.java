@@ -1,3 +1,5 @@
+//MASA EKLEME 40 İLE 50. SATIR
+
 package service;
 
 import model.*;
@@ -25,7 +27,8 @@ public class RestaurantManager {
         products.add(new Product(2,"Pizza",220));
         products.add(new Product(3,"Makarna",160));
         products.add(new Product(4,"Cheesecake",120));
-        products.add(new Product(4,"kahvaltılık",500));
+        products.add(new Product(5,"kahvaltılık",500));
+        products.add(new Product(12,"omlet",200));
 
         products.add(new Product(6,"Kola",50));
         products.add(new Product(7,"Ayran",35));
