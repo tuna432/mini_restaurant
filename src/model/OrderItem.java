@@ -6,7 +6,8 @@ public class OrderItem {
     private Product product;
     private int quantity;
 
-    //listeye ürün miktarının elşenmesini saglayan method.
+    //listeye ürün miktarının elşenmesini saglayan method, yani   "this.quantity = 1   ;" satırına 2 yazarsanız menüden tıklayınca 2 tane ekrar tek tıklayışta sadece ilk tıklama içindir.
+    //degiştirmeniz önerilmez.
     public OrderItem(Product product) {
         this.product = product;
         this.quantity = 1   ;

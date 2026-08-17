@@ -1,8 +1,10 @@
 //model baglantı cümlesi.
 package model;
+import java.util.HashSet;
 
 //RestaurantTableın classıdır
 public class RestaurantTable {
+    private HashSet<Integer> readyProducts;
     private int tableNumber;
     private TableStatus status;
     private Order order;
@@ -12,6 +14,7 @@ public class RestaurantTable {
         this.tableNumber = tableNumber;
         this.status = TableStatus.EMPTY;
         this.order = new Order();
+        readyProducts = new HashSet<>();
     }
 
     //masa numarasını alır
@@ -22,6 +25,18 @@ public class RestaurantTable {
     //masa boş mu dolu mu kontrol eder
     public TableStatus getStatus() {
         return status;
+    }
+
+    public boolean isProductReady(int productId) {
+        return readyProducts.contains(productId);
+    }
+
+    public void setProductReady(int productId) {
+        readyProducts.add(productId);
+    }
+
+    public void clearReadyProducts() {
+        readyProducts.clear();
     }
 
     //siparişi alır ve geri deger döndürür
