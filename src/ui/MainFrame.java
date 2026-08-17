@@ -52,7 +52,7 @@ public class MainFrame extends JFrame {
         cardLayout.show(mainPanel,"order");
 
     }
-
+//
     public void showKitchen(){
 
         kitchenPanel.refresh();

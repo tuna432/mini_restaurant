@@ -9,7 +9,7 @@ public class KitchenOrder {
         this.table = table;
         this.item = item;
     }
-
+//
     public RestaurantTable getTable() {
         return table;
     }

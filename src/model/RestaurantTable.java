@@ -52,7 +52,7 @@ public class RestaurantTable {
             status = TableStatus.OCCUPIED;
         }
     }
-
+//
     //siparişi kapatma metodu eklenir bu metod frontendeki koda bulunan butona baglanır tıklanıldıgında çalışır
     public void closeOrder() {
         order.clear();

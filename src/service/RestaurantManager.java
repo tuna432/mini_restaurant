@@ -18,6 +18,7 @@ public class RestaurantManager {
         createTables();
     }
 
+    //
     private void createProducts() {
 
         products.add(new Product(1,"Hamburger",180));

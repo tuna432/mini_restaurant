@@ -66,7 +66,7 @@ public class Order {
             items.remove(index);
         }
     }
-
+//
     //boş mu kontrolü
     public boolean isEmpty() {
         return items.isEmpty();

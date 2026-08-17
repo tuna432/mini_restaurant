@@ -48,6 +48,7 @@ public class TablePanel extends JPanel {
         refresh();
     }
 
+    //
     public void refresh() {
 
         tablesPanel.removeAll();

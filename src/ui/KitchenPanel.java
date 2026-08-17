@@ -80,6 +80,7 @@ public class KitchenPanel extends JPanel {
 
                 String name = item.getProduct().getName();
 
+                //
                 // İçecekleri mutfakta gösterme
                 if (name.equalsIgnoreCase("Kola")
                         || name.equalsIgnoreCase("Ayran")

@@ -12,7 +12,7 @@ public class OrderItem {
         this.product = product;
         this.quantity = 1   ;
     }
-
+//
     // ürün çagırılır
     public Product getProduct() {
         return product;
