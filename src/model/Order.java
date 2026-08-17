@@ -67,6 +67,7 @@ public class Order {
         }
     }
 //
+    //
     //boş mu kontrolü
     public boolean isEmpty() {
         return items.isEmpty();

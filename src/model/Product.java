@@ -18,6 +18,7 @@ public class Product {
         return id;
     }
 
+    //
     // ürün adını alan ve geri döndüren metod
     public String getName() {
         return name;

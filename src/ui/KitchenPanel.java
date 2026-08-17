@@ -7,6 +7,7 @@ import service.RestaurantManager;
 import javax.swing.*;
 import java.awt.*;
 
+//
 public class KitchenPanel extends JPanel {
 
     private MainFrame mainFrame;

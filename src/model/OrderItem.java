@@ -28,6 +28,7 @@ public class OrderItem {
         quantity++;
     }
 
+    //
     //eger miktar 1 den büyükse miktar azaltma yapılabilir
     public void decreaseQuantity() {
         if (quantity > 1) {

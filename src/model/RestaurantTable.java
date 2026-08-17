@@ -39,6 +39,7 @@ public class RestaurantTable {
         readyProducts.clear();
     }
 
+    //
     //siparişi alır ve geri deger döndürür
     public Order getOrder() {
         return order;

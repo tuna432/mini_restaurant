@@ -70,6 +70,7 @@ public class RestaurantManager {
 
     }
 
+    //
     // MUTFAK SİPARİŞLERİ
     public ArrayList<KitchenOrder> getKitchenOrders(){
 

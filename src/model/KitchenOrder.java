@@ -10,6 +10,7 @@ public class KitchenOrder {
         this.item = item;
     }
 //
+    //
     public RestaurantTable getTable() {
         return table;
     }
