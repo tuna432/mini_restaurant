@@ -16,3 +16,8 @@ hesap kapat tuşu tıklandıgında bir pencere açılır ödeme seçenegi sunar 
 <img width="323" height="284" alt="Ekran görüntüsü 2026-08-13 105216" src="https://github.com/user-attachments/assets/48fc587f-e96d-42e9-8642-097b4cd3d416" />
 
 <img width="190" height="97" alt="Ekran görüntüsü 2026-08-13 105222" src="https://github.com/user-attachments/assets/a25b5a4a-9de8-4b66-b263-4c974e7db353" />
+
+
+mutfak ekranı aşçıların ne pişirecegi görmelerini saglar hazır tuşuna basıp hazır oldugunu gösterebililer ayrıca içecekler bu kısma eklenmez.
+
+<img width="1292" height="829" alt="image" src="https://github.com/user-attachments/assets/099c1ce2-830f-40b3-88f3-f77adefc6719" />
